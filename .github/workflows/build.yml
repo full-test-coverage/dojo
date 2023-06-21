@@ -1,5 +1,6 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+---
+name: Build Test
+run-name: build-test
 on: [push]
 jobs:
   test-on-gnu-linux:
