@@ -27,7 +27,7 @@ describe("#2 Kata - Matching Expressions", () => {
             expect(parser.getCurrent()).toBe("b");
         });
 
-        xit("should work with any matching function", () => {
+        it("should work with any matching function", () => {
             // Given a base parser with some input
             const parser = new BaseParser();
             parser.setInput("1234abcd");

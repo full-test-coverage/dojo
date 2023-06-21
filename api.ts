@@ -48,7 +48,7 @@ export class BaseParser {
         const umbrella = [];
         for (; ;) {
             try {
-                umbrella.unshift(hook.apply(this));
+                umbrella.push(hook.apply(this));
             } catch (e) {
                 break;
             }
