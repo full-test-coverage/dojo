@@ -14,7 +14,7 @@ describe("#2 Kata - Matching Expressions", () => {
             expect(parser.cursor).toBe(0);
         });
 
-        xit("should capture as much of the input as possible", () => {
+        it("should capture as much of the input as possible", () => {
             // Given a base parser with some input
             const parser = new BaseParser();
             parser.setInput("aaab");
