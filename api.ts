@@ -61,13 +61,20 @@ export class BaseParser {
         break;
       }
     }
-    return Array.from(umbrella).filter(c => c.length > 0);
+    return Array.from(umbrella).filter(c => c.length >= 0);
   };
   oneOrMore = (hook: () => string): Array<string> => {
-    return [];
+    const umbrella = [];
+    for (; ;) {
+      try {
+        umbrella.push(hook.apply(this));
+      } catch (e) {
+        break;
+      }
+    }
+    return Array.from(umbrella).filter(c => c.length > 0);
   };
   or = (callbacks: Array<() => string>): string => {
-
     const result = [];
     for (let ri in callbacks) {
       let hook = callbacks[ri];
@@ -81,7 +88,10 @@ export class BaseParser {
         continue;
       }
     }
-    return result.join("-");
+    if (result.length === 0) {
+      throw new ParsingError("No option found")
+    }
+    return result.join("");
   };
 }
 

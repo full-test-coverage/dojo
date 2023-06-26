@@ -11,8 +11,9 @@
     "typescript": "^3.7.3"
   },
   "scripts": {
-    "test": "ts-node $(which jasmine) --config=jasmine.json"
+    "test": "ts-node node_modules/.bin/jasmine --config=jasmine.json"
   },
+  "maintainers": "gabriel@poems.codes",
   "author": "lincoln@clarete.li",
   "license": "GPL-3.0-or-later"
 }
